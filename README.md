@@ -1,5 +1,5 @@
 # Инициализация проекта
-----
+
 ## Инициализация backend-а
 1. Установка venv
 /root
@@ -17,7 +17,7 @@
     flask db migrate -m "add_tables"
     flask db upgrade
 ```
----
+
 ## Запуск backend-а
 
 ```bash
