@@ -5,6 +5,8 @@
 /root
 ```bash
     python3 -m venv venv
+```
+```bash
     source venv/bin/activate
 ```
 2. Установка модулей
@@ -14,7 +16,11 @@
 3. Инициализация базы данных
 ```bash
     flask db init
+```
+```bash
     flask db migrate -m "add_tables"
+```
+```bash
     flask db upgrade
 ```
 
