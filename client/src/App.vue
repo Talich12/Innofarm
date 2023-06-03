@@ -31,7 +31,7 @@ export default {
 }
 
 .vs-card {
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .vs-card__img {
