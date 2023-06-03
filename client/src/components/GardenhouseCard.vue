@@ -1,14 +1,14 @@
 <template>
 <vs-card type="4">
     <template #title>
-      <h3>Pot with a plant</h3>
+      <h3><slot name="title"></slot></h3>
     </template>
     <template #img>
       <img src="../assets/images/sample2.png" alt="">
     </template>
     <template #text>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        <slot name="text"></slot>
       </p>
     </template>
   </vs-card>
