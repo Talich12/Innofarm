@@ -14,6 +14,9 @@ Vue.component('gardenhousecard', GardenhouseCard)
 import PatternBackground from './components/PatternBackground'
 Vue.component('patternbackground', PatternBackground)
 
+import Footer from './components/Footer'
+Vue.component('myfooter', Footer)
+
 Vue.config.productionTip = false
 
 new Vue({

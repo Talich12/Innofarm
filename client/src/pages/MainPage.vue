@@ -1,7 +1,8 @@
 <template>
     <div class="main-container">
         <headerprofile />
-        <h3 v-if="Data.gardens">Теплицы в которых вы работаете</h3>
+        <patternbackground></patternbackground>
+        <h3 style="margin-top: 3vh; z-index: 5; font-weight: bolder;" v-if="Data.gardens != []">Теплицы в которых вы работаете:</h3>
         <div v-for="garden in Data.gardens" class="gardenhouse">
             <gardenhousecard>
                 <template #title>
@@ -12,7 +13,7 @@
                 </template>
             </gardenhousecard>
         </div>
-        <h3 v-if="Data.own_gardens">Теплицы в которых вы админ</h3>
+        <h3 style="z-index: 5; font-weight: bolder;" v-if="Data.own_gardens">Теплицы в которых вы админ:</h3>
         <div v-for="garden in Data.own_gardens" class="gardenhouse">
             <gardenhousecard>
                 <template #title>
@@ -23,6 +24,7 @@
                 </template>
             </gardenhousecard>
         </div> 
+        <myfooter></myfooter>
     </div>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat&display=swap" rel="stylesheet"> 
     <Header />
     <router-view/>
   </div>
@@ -17,13 +18,15 @@ export default {
 @import 'assets/css/reset.css';
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;
-  height: 100vh;
+  height: 100%;
   background-color: #B7C6AE;
+  overflow-y:visible;
+  scrollbar-color: rgb(55, 97, 57) rgb(55, 97, 57);
 }
 
 .vs-avatar img {
@@ -31,10 +34,14 @@ export default {
 }
 
 .vs-card {
-  margin: 20px auto;
+  margin: 5vh auto;
 }
 
 .vs-card__img {
   height: 25vh;
+}
+
+.vs-card__text {
+  width: 100%;
 }
 </style>

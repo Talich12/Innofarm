@@ -13,3 +13,9 @@
     </template>
   </vs-card>
 </template>
+
+<style>
+  .vs-card-content.type-4 .vs-card {
+    box-shadow: 8px 14px 16px rgba(0, 0, 0, 0.25);
+  }
+</style>
