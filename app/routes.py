@@ -51,13 +51,13 @@ def post_login():
         "refresh_token" : refresh_token
         })
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
+@jwt_required(refresh=False)
 def get_index():
     output = {}
     garden_schema = GardenSchema(many = True)
 
-    data = request.get_json()
-    username = data['username']
+    username = get_jwt_identity()
 
     find_user = User.query.filter_by(username = username).first()
     
@@ -229,3 +229,27 @@ def delete_supplie(id):
     db.session.commit()
 
     return jsonify({"status": "Success"})
+
+
+@app.route('/TokenRefresh', methods=['GET'])
+@jwt_required(refresh=True)
+def refresh_token():
+    current_user = get_jwt_identity()
+    access_token = create_access_token(identity = current_user)
+    return {'access_token': access_token}
+
+@app.route('/LogoutAccess', methods=['GET'])
+@jwt_required(refresh=False)
+def logout_access():
+    jti = get_jwt()['jti']
+    revoked_token = RevokedTokenModel(jti = jti)
+    revoked_token.add()
+    return jsonify({"msg": "successsss"})
+
+@app.route('/LogoutRefresh', methods=['GET'])
+@jwt_required(refresh=True)
+def logout_refresh():
+    jti = get_jwt()['jti']
+    revoked_token = RevokedTokenModel(jti = jti)
+    revoked_token.add()
+    return jsonify({"msg": "successsss"})

@@ -39,13 +39,35 @@ export default {
   methods: {
       Get() {
           const path = "http://localhost:3000/";
-          axios.post(path, {username: "Denis"})
+          axios.get(path, {headers: {
+                    'Authorization': 'Bearer ' + this.$cookies.get("access_token"),
+                }})
               .then((response) => {
-              console.log(response.data.gardens);
+              console.log(response.data);
               this.Data = response.data;
           })
               .catch((error) => {
-              console.log(error);
+                if (error.response.status === 401){
+                    if (this.$cookies.isKey("access_token")){
+
+                        const path2 ="http://localhost:3000/TokenRefresh";
+                        axios.get(path, {headers: {
+                                    'Authorization': 'Bearer ' + this.$cookies.get("access_token"),
+                                }})
+                        .then((response) => {
+                            console.log(response.data);
+                            this.$cookies.set("access_token", response.data.access_token)
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            this.$route.push('/login')
+                        }); 
+                    }
+                    else{
+                        this.$route.push('/login')
+                    }
+                }
+                console.log(error.response.status);
           });
       },
   },

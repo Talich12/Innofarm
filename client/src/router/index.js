@@ -1,14 +1,18 @@
 import Vue from 'vue'
 import Vuesax from 'vuesax';
 import Router from 'vue-router'
+import VueCookies from 'vue-cookies'
 
 import MainPage from '@/pages/MainPage'
 import ProfilePage from '@/pages/ProfilePage'
+import RegistrationPage from '@/pages/RegistrationPage'
+import LoginPage from '@/pages/LoginPage'
 
 import 'vuesax/dist/vuesax.css';
 
 Vue.use(Router)
 Vue.use(Vuesax)
+Vue.use(VueCookies)
 
 export default new Router({
   routes: [
@@ -21,6 +25,16 @@ export default new Router({
       path: '/profile',
       name: 'ProfilePage',
       component: ProfilePage
-    }
+    },
+    {
+      path: '/registration',
+      name: 'RegistrationPage',
+      component: RegistrationPage
+    },
+    {
+      path: '/login',
+      name: 'LoginPage',
+      component: LoginPage
+    },
   ]
 })
