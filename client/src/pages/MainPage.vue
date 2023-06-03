@@ -1,8 +1,20 @@
 <template>
     <div class="main-container">
-        <headerprofile />
-        <div class="gardenhouse">
-            <gardenhousecard />
-        </div>
+        <patternbackground></patternbackground>
+        <headermain></headermain>
+            <div class="gardenhouse">
+                <gardenhousecard />
+            </div>    
     </div>
-</template>
+  </template>
+  
+  <style>
+  .main-container {
+    position: relative;
+  }
+  
+  .gardenhouse {
+    position: relative;
+    z-index: 1;
+  }
+  </style>  

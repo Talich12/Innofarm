@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow */
 }
 
 .avatar {

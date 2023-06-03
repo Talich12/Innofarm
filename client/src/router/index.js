@@ -3,6 +3,7 @@ import Vuesax from 'vuesax';
 import Router from 'vue-router'
 
 import MainPage from '@/pages/MainPage'
+import ProfilePage from '@/pages/ProfilePage'
 
 import 'vuesax/dist/vuesax.css';
 
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'MainPage',
       component: MainPage
+    },
+    {
+      path: '/profile',
+      name: 'ProfilePage',
+      component: ProfilePage
     }
   ]
 })
