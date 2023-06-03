@@ -2,6 +2,6 @@
     <div class="profilecontainer">
         <patternbackground></patternbackground>
         <headerprofile />
-        <footer></footer>
+        <myfooter></myfooter>
     </div>
 </template>

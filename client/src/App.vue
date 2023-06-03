@@ -29,6 +29,10 @@ export default {
   scrollbar-color: rgb(55, 97, 57) rgb(55, 97, 57);
 }
 
+body {
+  background-color: #B7C6AE;
+}
+
 .vs-avatar img {
   height: 100%;
 }
@@ -43,5 +47,10 @@ export default {
 
 .vs-card__text {
   width: 100%;
+}
+
+.vs-button__content {
+        height: 15vh;
+        width: 15vh;
 }
 </style>

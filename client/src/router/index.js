@@ -4,6 +4,7 @@ import Router from 'vue-router'
 
 import MainPage from '@/pages/MainPage'
 import ProfilePage from '@/pages/ProfilePage'
+import Gardenhouse from '@/pages/GardenhousePage'
 
 import 'vuesax/dist/vuesax.css';
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/profile',
       name: 'ProfilePage',
       component: ProfilePage
+    },
+    {
+      path: '/gardenhouse',
+      name: 'Gardenhouse',
+      component: Gardenhouse
     }
   ]
 })
