@@ -2,7 +2,7 @@
     <div class="main-container">
         <headerprofile :name="this.User.username"/>
         <patternbackground></patternbackground>
-        <h3 style="margin-top: 3vh; z-index: 5; font-weight: bolder;" v-if="Data.gardens.length > 0 ">Теплицы в которых вы работаете:</h3>
+        <h3 style="margin-top: 3vh; z-index: 5; font-weight: bolder;">Теплицы в которых вы работаете:</h3>
         <div v-for="garden in Data.gardens" class="gardenhouse">
             <gardenhousecard>
                 <template #title>
@@ -13,7 +13,7 @@
                 </template>
             </gardenhousecard>
         </div>
-        <h3 style="z-index: 5; font-weight: bolder;" v-if="Data.own_gardens.length > 0">Теплицы в которых вы админ:</h3>
+        <h3 style="z-index: 5; font-weight: bolder;" >Теплицы в которых вы админ:</h3>
         <div v-for="garden in Data.own_gardens" class="gardenhouse">
             <gardenhousecard>
                 <template #title>
