@@ -3,11 +3,25 @@
     <vs-avatar size="60" class="avatar">
       <img src="../assets/images/sample1.png" alt="">
     </vs-avatar>
-    <div class="content">
-      <h1 style="margin-left: 10vw; font-weight: 900;">Талалуев Денис Сергеевич</h1>
+    <div class="content" >
+      <h1 style="margin-left: 10vw; font-weight: 900;">{{ $props.name }}</h1>
     </div>
   </div>
 </template>
+
+
+<script>
+
+export default {
+  name: "index",
+  props: ['name'],
+  data() {
+      return {
+        Data: [],
+      };
+  },
+};
+</script>
 
 <style scoped>
 .container {

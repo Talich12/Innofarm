@@ -11,7 +11,7 @@
 ```
 2. Установка модулей
 ```bash
-    pip install flask flask_sqlalchemy flask_cors flask_jwt_extented flask_marshmallow marshmallow_sqlalchemy Werkzeug
+    pip install flask flask_sqlalchemy flask_cors flask_jwt_extended flask_migrate flask_marshmallow marshmallow_sqlalchemy Werkzeug
 ```
 3. Инициализация базы данных
 ```bash
