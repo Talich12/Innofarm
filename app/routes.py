@@ -179,6 +179,17 @@ def delete_worker(id):
     return jsonify({"status": "Success"})
 
 
+@app.route('/user', methods=['GET'])
+@jwt_required(refresh=False)
+def user():
+    username = get_jwt_identity()
+    find_user = User.query.filter_by(username = username).first()
+
+    user_schema = UserSchema(many = False)
+    output = user_schema.dump(find_user)
+
+    return jsonify(output)
+
 @app.route('/user/<id>', methods=['GET'])
 def get_user(id):
     find_user = User.query.filter_by(id = id).first()
