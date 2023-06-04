@@ -64,12 +64,13 @@ body {
   color: black;
   opacity: 1;
 }
-.vs-select__input.simple {
+.vs-select__input {
   background: #C6D8BB;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.35);
-  color: black;
+  color: #76816f;
 }
 .vs-button {
+  color: #76816f;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.35); 
 }
 p {
@@ -83,4 +84,8 @@ p {
 .systable tbody tr td[data-v-cf2e49d2]{
   background: #B4B9B1;
   }
+  .vs-input {
+    color: #76816f;
+  }
+
 </style>

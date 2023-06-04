@@ -3,9 +3,11 @@
     <g-gantt-chart
       :chart-start="myChartStart"
       :chart-end="myChartEnd"
+      precision="months"
     >
       <g-gantt-row
         v-for="row in rows"
+        precision="day"
         :key="row.label"
         :label="row.label"
         :bars="row.bars"
@@ -47,12 +49,12 @@
             label: "My row #2",
             bars: [
               {
-                myStart: "2020-03-02 01:00",
-                myEnd: "2020-03-02 12:00"
+                myStart: "2023-02-02 01:00",
+                myEnd: "2023-03-01 12:00"
               },
               {
-                myStart: "2020-03-02 13:00",
-                myEnd: "2020-03-02 22:00"
+                myStart: "2023-03-02 13:00",
+                myEnd: "2023-03-10 22:00"
               }
             ]
           }

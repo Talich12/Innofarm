@@ -17,12 +17,12 @@
         Дата рождения
         <vs-input type="date" v-model="date" style="width: 200px; display: block; margin: 1vh auto;"/>
 
-        <vs-select color="#C6D8BB" placeholder="Select" v-model="status" style="width: 200px; display: block; margin: 3vh auto;">
+        <vs-select color="#C6D8BB" placeholder="Должность" v-model="status" style="width: 200px; display: block; margin: 3vh auto;">
             <vs-option label="Admin" value="Admin">
-            Admin
+            Администратор
             </vs-option>
             <vs-option label="Worker" value="Worker">
-            Worker
+            Рабочий
             </vs-option>
         </vs-select>
 

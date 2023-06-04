@@ -21,7 +21,8 @@
         background-color: #564F47F5;
         box-shadow: 0px -7px 12px rgba(0, 0, 0, 0.35);
         z-index: 5;
-        position:sticky;
+        position:absolute;
+        bottom: 0;
         display: flex;
         align-items: flex-start;
     }

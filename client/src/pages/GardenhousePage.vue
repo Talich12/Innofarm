@@ -24,7 +24,7 @@
           @click="active = 0"
         >
         <div class="image-container">
-          <img src="../assets/images/table2.svg"/><p>План-график обслуживания теплицы</p>
+          <img src="../assets/images/table.svg"/><p>План-график обслуживания теплицы</p>
         </div>
         </vs-button>
         <vs-button
