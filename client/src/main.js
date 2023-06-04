@@ -41,12 +41,16 @@ axios.interceptors.response.use(
           })
           .catch((error) => {
               console.log(error);
-              $router.push('/login')
+              router.push('/')
           }); 
       }
       else{
-          $router.push('/login')
+          router.push('/login')
       }
+    }
+    else{
+      console.log('asdf')
+      router.push('/login')
     }
   }
 );

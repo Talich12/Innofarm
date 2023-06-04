@@ -55,6 +55,7 @@ export default {
                 axios.post(path, {login: this.login, password: this.password, first_name: this.first_name, ser_name: this.ser_name, last_name: this.last_name, date: this.date, status: this.status })
                 .then((response) => {
                     console.log(response.data);
+                    this.$router.push('/login')
                 })
                 .catch((error) => {
                     console.log(error);
