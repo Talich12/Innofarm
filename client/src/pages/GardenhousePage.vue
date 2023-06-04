@@ -9,7 +9,7 @@
           :to="$route.path + '/table/supplie'"
         >
         <div class="image-container">
-          <img src="../assets/images/table.svg"/><p>Табель учета расходников</p>
+          <img src="../assets/images/clip.svg"/><p>Табель учета расходников</p>
         </div>
         </vs-button>
 
