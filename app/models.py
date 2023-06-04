@@ -51,25 +51,14 @@ class Garden(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    supplie_table = db.Column(db.String())
+    finance_table = db.Column(db.String())
+    plant_table = db.Column(db.String())
 
     author = db.relationship("User", backref="Gardens")
 
     def __repr__(self):
         return '<GreeHouse {}>'.format(self.username) 
-    
-class Supplie(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64))
-    measure = db.Column(db.String(64))
-
-class Metric(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    garden_id =  db.Column(db.Integer, db.ForeignKey('garden.id'))
-    supplie_id = db.Column(db.Integer, db.ForeignKey('supplie.id'))
-    count = db.Column(db.Integer)
-
-    garden = db.relationship("Garden", backref="Metric")
-    supplie = db.relationship("Supplie", backref="Metric")
     
 
 class Workers(db.Model):
@@ -105,21 +94,3 @@ class GardenSchema(ma.SQLAlchemySchema):
     name = ma.auto_field()
 
     author = fields.Nested(UserSchema)
-
-class SupplieSchema(ma.SQLAlchemySchema):
-    class Meta:
-        model = Supplie
-        load_instance = True
-
-    id = ma.auto_field()
-    name = ma.auto_field()
-    measure = ma.auto_field()
-
-class MetricSchema(ma.SQLAlchemySchema):
-    class Meta:
-        model = Metric
-        load_instance = True
-
-    id = ma.auto_field()
-    supplie = fields.Nested(SupplieSchema)
-    count = ma.auto_field()
