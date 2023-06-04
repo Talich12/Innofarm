@@ -31,7 +31,9 @@
             color="#C6D8BB"
             style="max-width: 300px; height: 25vh; margin: 5vh auto; box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.35); border-radius: 25px;"
         >
-            <i class='bx bxs-paint-roll' ></i> Добавить новую теплицу
+            <div class="image-container">
+              <img src="../assets/images/plus.svg"/><p>Добавить новую теплицу</p>
+            </div>
         </vs-button>
         <vs-dialog v-model="active">
         <template #header>
@@ -42,13 +44,10 @@
 
 
         <div class="con-form">
-          <vs-input v-model="garden_name" placeholder="Введите название">
-            <template v-if="error" #message-danger >
-                        Поле пусто
+          <vs-input v-model="garden_name" placeholder="Введите название" style="width: 100%;">
+            <template v-if="error" #message-warn>
+                        <p style="color: #fff; margin-top: 0.25vh;">Поле пусто, введите данные</p>
                     </template>
-            <template #icon>
-              #
-            </template>
           </vs-input>
         </div>
 
@@ -138,3 +137,23 @@ export default {
   }
 };
 </script>
+
+<style>
+   .vs-button__content {
+    width: auto;
+   }
+  .image-container img {
+    height: 10vh;
+    display: flex;
+    margin: 2vh auto;
+  }
+  .vs-input {
+    width: 100%;
+  }
+  .vs-button__content {
+    background-color:#C6D8BB;
+  }
+  .vs-dialog {
+    background-color: #B4B9B1;
+  }
+</style>
