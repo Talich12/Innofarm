@@ -54,6 +54,13 @@ body {
         width: 15vh;
 }
 .vs-card-content.type-4 .vs-card__text {
-  background-color: #B7C6AE;
+  background-color: #C6D8BB;
+}
+.vs-input {
+  background-color: #C6D8BB;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.35);
+}
+.vs-input-content {
+  color: black;
 }
 </style>
