@@ -2,7 +2,7 @@ import math
 from app import app, db, jwt
 from flask import jsonify, request, g
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
-from app.models import User, Garden, Workers, Supplie, Metric, RevokedTokenModel, UserSchema, GardenSchema, SupplieSchema, MetricSchema
+from app.models import User, Garden, Workers, RevokedTokenModel, UserSchema, GardenSchema
 from flask_cors import cross_origin
 from werkzeug.utils import secure_filename
 import os
@@ -79,7 +79,6 @@ def get_index():
     return jsonify(output)
 
 
-
 @app.route('/garden/create', methods=['POST'])
 def create_garden():
     data = request.get_json()
@@ -103,43 +102,6 @@ def get_garden(id):
 
     return jsonify(output)
 
-@app.route('/garden/<id>/metric', methods=['GET'])
-def get_metric(id):
-    find_garden = Garden.query.filter_by(id = id).first()
-
-    find_metric = Metric.query.filter_by(garden_id = find_garden.id).all()
-
-    metric_schema = MetricSchema(many = True)
-    output = metric_schema.dump(find_metric)
-
-    return jsonify(output)
-
-
-@app.route('/garden/<id>/metric/add', methods=['POST'])
-def add_metric(id):
-    data = request.get_json()
-    name = data["name"]
-    count = data["count"]
-
-    find_supplie = Supplie.query.filter_by(name = name).first()
-    find_garden = Garden.query.filter_by(id = id).first()
-
-    metric = Metric(supplie_id = find_supplie.id, supplie = find_supplie, garden_id = find_garden.id, garden = find_garden, count = count)
-
-    db.session.add(metric)
-    db.session.commit()
-
-    return jsonify({"status" : "Success"})
-
-@app.route('/garden/<id>/metric/<metric_id>/delete', methods=['DELETE'])
-def delete_metric(id, metric_id):
-    
-    find_metric = Metric.query.filter_by(id = metric_id).first()
-
-    db.session.delete(find_metric)
-    db.session.commit()
-
-    return jsonify({"status" : "Success"})
 
 @app.route('/garden/<id>/delete', methods=['DELETE'])
 def delete_garden(id):
@@ -208,39 +170,6 @@ def delete_user(id):
     find_user = User.query.filter_by(id = id).first()
 
     db.session.delete(find_user)
-    db.session.commit()
-
-    return jsonify({"status": "Success"})
-
-@app.route('/supplie', methods=['GET'])
-def get_supplie():
-    find_supplie = Supplie.query.all()
-    
-    supplie_schema = SupplieSchema(many = True)
-
-    output = supplie_schema.dump(find_supplie)
-
-    return jsonify(output)
-
-@app.route('/supplie/add', methods=['POST'])
-def add_supplie():
-    data = request.get_json()
-    
-    name = data['name']
-    measure = data['mesure']
-
-    supplie = Supplie(name = name, measure = measure)
-
-    db.session.add(supplie)
-    db.session.commit()
-
-    return jsonify({"status": "Success"})
-
-@app.route('/supplie/<id>/delete', methods=['DELETE'])
-def delete_supplie(id):
-    find_supplie = Supplie.query.filter_by(id = id).first()
-
-    db.session.delete(find_supplie)
     db.session.commit()
 
     return jsonify({"status": "Success"})
