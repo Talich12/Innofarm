@@ -52,7 +52,6 @@ export default {
             });
 
             const path2 = "http://localhost:3000/gardenhouse/" + this.$route.params.id + "/table/finance";
-            finance_data = this.jsondata
             axios.post(path2, {data: this.jsondata})
                 .then((response) => {
                 console.log(response.data);
