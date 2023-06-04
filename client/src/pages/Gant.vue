@@ -24,6 +24,8 @@
   
   export default {
   
+
+  
     components:{
       GGanttChart,
       GGanttRow
@@ -31,15 +33,15 @@
   
     data(){
       return {
-        myChartStart: "2023-03-01 00:00",
-        myChartEnd: "2023-03-03 00:00",
+        myChartStart: "2020-03-01 00:00",
+        myChartEnd: "2020-03-03 00:00",
         rows: [
           {
             label: "My row #1",
             bars: [
               {
-                myStart: "2023-03-01 12:10",
-                myEnd: "2023-03-01 16:35"
+                myStart: "2020-03-01 12:10",
+                myEnd: "2020-03-01 16:35"
               }
             ]
           },
@@ -59,6 +61,7 @@
         ]
       }
     }
+  
   
   }
   </script>

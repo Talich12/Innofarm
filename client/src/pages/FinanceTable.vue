@@ -1,15 +1,10 @@
 <template>
     <div>
-    <vue-excel-editor v-model="jsondata"  filter-row allow-add-col>
-        <vue-excel-column field="date" label="Дата" type="date" width="100px" />
-        <vue-excel-column field="henobase" label="Фенофаза" type="string"  />
-        <vue-excel-column field="height" label="Средняя высота растений, см" type="string"  />
-        <vue-excel-column field="leaves" label="Среднее кол-во листьев, шт" type="number"  />
-        <vue-excel-column field="height2" label="Средняя высота, см" type="number"  />
-        <vue-excel-column field="leaves2" label="Среднее количество междоузлий, см" type="number" />
-        <vue-excel-column field="weight" label="Средняя масса после снятия, г" type="number"  />
-        <vue-excel-column field="square" label="Средняя площадь поверхности листьев" type="number"  />
-        <vue-excel-column field="notes" label="Примечания" type="string"  />
+    <vue-excel-editor v-model="jsondata" height="1120" no-paging no-footer filter-row allow-add-col>
+        <vue-excel-column field="date" label="Дата" type="date"  />
+        <vue-excel-column field="supplie" label="Рассходник" type="string" :options="this.supplie"  />
+        <vue-excel-column field="count" label="Кол-во" type="number" />
+        <vue-excel-column field="total" label="Итого" type="string" summary="sum"/>
     </vue-excel-editor>
     <vs-button color="#C6D8BB" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
         Добавить запись
@@ -26,11 +21,14 @@ export default {
     name: 'app',
     data() {
       return {
-        jsondata: [
-        ]
+        jsondata: [],
+        supplie: [],
       };
     },
     methods: {
+        onClick(){
+            console.log(this.jsondata)
+        },
         Get(){
             const path = "http://localhost:3000" + this.$route.path;
             axios.get(path)
@@ -50,14 +48,26 @@ export default {
             })
                 .catch((error) => {
             });
-
-            const path2 = "http://localhost:3000/gardenhouse/" + this.$route.params.id + "/table/finance";
-            console.log(path2)
         },
         onClick(){
             const data = {}
             this.jsondata.push(data)
             console.log(this.jsondata)
+        },
+        GetSupplie(){
+            const path = "http://localhost:3000/supplie"
+
+            axios.get(path)
+                .then((response) => {
+                    console.log(response.data)
+                    var data = response.data
+                    for (var sup in data){
+                        this.supplie.push(data[sup].name)
+                    }
+                    console.log(this.supplie)
+            })
+                .catch((error) => {
+            });
         }
 
     },

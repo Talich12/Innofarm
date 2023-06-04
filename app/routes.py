@@ -2,7 +2,7 @@ import math
 from app import app, db, jwt
 from flask import jsonify, request, g
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, get_jwt
-from app.models import User, Garden, Workers, RevokedTokenModel, UserSchema, GardenSchema
+from app.models import User, Garden, Workers, Supplie, RevokedTokenModel, UserSchema, GardenSchema, SupplieSchema
 from flask_cors import cross_origin
 from werkzeug.utils import secure_filename
 import os
@@ -177,7 +177,7 @@ def delete_user(id):
 
 
 @app.route('/gardenhouse/<id>/table/supplie', methods=['POST'])
-def edit_supplie(id):
+def edit_supplie_table(id):
     data = request.get_json()['data']
 
     find_garden = Garden.query.filter_by(id = id).first()
@@ -188,7 +188,7 @@ def edit_supplie(id):
     return jsonify({"status": "Success"})
 
 @app.route('/gardenhouse/<id>/table/supplie', methods=['GET'])
-def get_supplie(id):
+def get_supplie_table(id):
 
     find_garden = Garden.query.filter_by(id = id).first()
     string = find_garden.supplie_table
@@ -218,7 +218,35 @@ def get_plant(id):
 
     return jsonify(json_data)
 
+@app.route('/gardenhouse/<id>/table/finance', methods=['POST'])
+def edit_finance(id):
+    data = request.get_json()['data']
 
+    find_garden = Garden.query.filter_by(id = id).first()
+    find_garden.finance_table = str(data)
+
+    db.session.commit()
+
+    return jsonify({"status": "Success"})
+
+@app.route('/gardenhouse/<id>/table/finance', methods=['GET'])
+def get_finance(id):
+
+    find_garden = Garden.query.filter_by(id = id).first()
+    string = find_garden.finance_table
+    string = string.replace("'", "\"")
+    json_data = json.loads(string)
+
+    return jsonify(json_data)
+
+@app.route('/supplie', methods=['GET'])
+def get_supplie():
+
+    supplie = Supplie.query.all()
+    supplie_schema = SupplieSchema(many=True)
+    output = supplie_schema.dump(supplie)
+
+    return jsonify(output)
 
 
 @app.route('/TokenRefresh', methods=['GET'])

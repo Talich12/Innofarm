@@ -61,6 +61,15 @@ class Garden(db.Model):
         return '<GreeHouse {}>'.format(self.username) 
     
 
+class Supplie(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), index=True, unique=True)
+    cost = db.Column(db.Integer)
+
+
+    def __repr__(self):
+        return '<Supplie {}>'.format(self.username) 
+
 class Workers(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     worker_id =  db.Column(db.Integer, db.ForeignKey('user.id'))
@@ -72,6 +81,16 @@ class Workers(db.Model):
     def __repr__(self):
         return '<GreeHouse {}>'.format(self.username) 
 
+
+
+class SupplieSchema(ma.SQLAlchemySchema):
+    class Meta:
+        model = Supplie
+        load_instance = True
+
+    id = ma.auto_field()
+    name = ma.auto_field()
+    cost = ma.auto_field()
 
 class UserSchema(ma.SQLAlchemySchema):
     class Meta:
