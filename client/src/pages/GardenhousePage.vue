@@ -2,14 +2,14 @@
     <div class="greenhousepage">
       <headermain></headermain>
       <div class="button-row">
-        <vs-button
+        <vs-button class="gdbtn"
            color="#999483"
           :active="active == 0"
           :to="$route.path + '/table/supplie'"
         >
           Табель учета расходников
         </vs-button>
-        <vs-button
+        <vs-button class="gdbtn"
            color="#999483"
           :active="active == 0"
           @click="active = 0"
@@ -18,7 +18,7 @@
         </vs-button>
       </div>
       <div class="button-row">
-        <vs-button
+        <vs-button class="gdbtn"
            color="#999483"
           :active="active == 0"
           @click="active = 0"
@@ -27,7 +27,7 @@
           <img src="../assets/images/table.svg"/><p>План-график обслуживания теплицы</p>
         </div>
         </vs-button>
-        <vs-button
+        <vs-button class="gdbtn"
            color="#999483"
           :active="active == 0"
           :to="$route.path + '/table/plant'"
@@ -36,14 +36,14 @@
         </vs-button>
       </div>
       <div class="button-row">
-        <vs-button
+        <vs-button class="gdbtn"
            color="#999483"
           :active="active == 0"
           :to="$route.path + '/table/finance'"
         >
           Система финансового учета для отслеживания затрат 
         </vs-button>
-        <vs-button
+        <vs-button class="gdbtn"
            color="#999483"
           :active="active == 0"
           @click="active = 0"
@@ -79,6 +79,10 @@
     display: flex;
     justify-content: space-between;
     padding: 4vh;
+  }
+
+  .gdbtn {
+    width: 15vh;
   }
   </style>
   

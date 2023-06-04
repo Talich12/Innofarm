@@ -5,12 +5,15 @@
         <vue-excel-column field="supplie" label="Рассходник" type="string" :options="this.supplie" width="188px" />
         <vue-excel-column field="count" label="Кол-во" type="number" />
     </vue-excel-editor>
-    <vs-button color="#C6D8BB" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
-        Добавить запись
-    </vs-button>
-    <vs-button color="#C6D8BB" @click="Post()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
-        Сохранить
-    </vs-button>
+    <div style="display: flex;">
+        <vs-button 
+            color="#C6D8BB" @click="onClick()" style="width: 180px; height: 8vh; display: flex; margin: 2vh auto; ">
+            Добавить запись
+        </vs-button>
+        <vs-button color="#C6D8BB" @click="Post()" style="width: 180px; height: 8vh; display: flex; margin: 2   vh auto; ">
+            Сохранить
+        </vs-button>
+    </div>
     </div> 
 </template>
 
@@ -90,5 +93,8 @@ export default {
   .vue-excel-editor {
     color: black;
     
+  }
+  .vs-button {
+    background-color: #C6D8BB;
   }
 </style>
