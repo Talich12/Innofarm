@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <vs-avatar size="60" class="avatar">
+    <vs-avatar @click="onRoute()" size="60" class="avatar">
       <img src="../assets/images/sample1.png" alt="">
     </vs-avatar>
     <div class="content" style="width: 25vw;">
@@ -20,6 +20,11 @@ export default {
         Data: [],
       };
   },
+  methods:{
+    onRoute(){
+      this.$router.push('/profile')
+    }
+  }
 };
 </script>
 

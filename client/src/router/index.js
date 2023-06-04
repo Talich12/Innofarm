@@ -70,7 +70,7 @@ export default new Router({
       component: FinanceTable
     },
     {
-      path: '/gant',
+      path: '/gant/:id',
       name: 'Gant',
       component: Gant
     },

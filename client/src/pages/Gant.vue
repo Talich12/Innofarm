@@ -15,12 +15,6 @@
         bar-end="myEnd"
       />
     </g-gantt-chart>
-    <vs-button color="#C6D8BB" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
-        Добавить запись
-    </vs-button>
-    <vs-button color="#C6D8BB" @click="Post()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
-        Сохранить
-    </vs-button>
   </div>
   
   </template>

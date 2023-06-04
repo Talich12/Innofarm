@@ -15,6 +15,35 @@
             Сохранить
         </vs-button>
     </div>
+    <vs-button color="#C6D8BB" @click="active = !active" style="width: 46%; height: 8vh; display: flex; margin: 2vh auto; ">
+        Добавить расходник
+    </vs-button>
+
+    <vs-dialog v-model="active">
+        <template #header>
+          <h4 class="not-margin">
+            Создать расходник
+          </h4>
+        </template>
+
+
+        <div class="con-form">
+          <vs-input v-model="supplie_name" placeholder="Введите название" style="width: 100%;">
+           
+          </vs-input>
+          <vs-input v-model="cost" placeholder="Введите стоимость" style="width: 100%;">
+            
+          </vs-input>
+        </div>
+
+        <template #footer>
+          <div class="footer-dialog">
+            <vs-button @click="AddSupplie()" block>
+              <p>Добавить теплицу</p>
+            </vs-button>
+          </div>
+        </template>
+      </vs-dialog>
     </div> 
 </template>
 
@@ -24,6 +53,9 @@ export default {
     name: 'app',
     data() {
       return {
+        supplie_name: '',
+        cost: '',
+        active: false,
         jsondata: [],
         supplie: [],
       };
@@ -76,6 +108,17 @@ export default {
                         this.supplie.push(data[sup].name)
                     }
                     console.log(this.supplie)
+            })
+                .catch((error) => {
+            });
+        },
+        AddSupplie(){
+            const path = "http://localhost:3000/supplie"
+
+            axios.post(path, {supplie_name: this.supplie_name, cost: this.cost})
+                .then((response) => {
+                    console.log(response.data)
+                    this.$router.go(0)
             })
                 .catch((error) => {
             });
