@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuesax from 'vuesax';
 import Router from 'vue-router'
 import VueCookies from 'vue-cookies'
+import VueExcelEditor from 'vue-excel-editor'
 
 import MainPage from '@/pages/MainPage'
 import ProfilePage from '@/pages/ProfilePage'
@@ -15,6 +16,7 @@ import 'vuesax/dist/vuesax.css';
 Vue.use(Router)
 Vue.use(Vuesax)
 Vue.use(VueCookies)
+Vue.use(VueExcelEditor)
 
 export default new Router({
   routes: [

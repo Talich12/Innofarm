@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "vue": "^2.5.2",
     "vue-cookies": "^1.8.3",
+    "vue-excel-editor": "^1.5.19",
     "vue-router": "^3.0.1",
     "vue3-excel-editor": "^1.0.20",
     "vuesax": "^4.0.1-alpha.25"

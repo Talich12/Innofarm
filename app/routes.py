@@ -65,7 +65,7 @@ def get_index():
 
     find_user = User.query.filter_by(username = username).first()
     
-    if find_user.status == "admin":
+    if find_user.status == "Admin":
         own_gardens = Garden.query.filter_by(author_id = find_user.id).all()
         own_gardens_json = garden_schema.dump(own_gardens)
         output["own_gardens"] = own_gardens_json
