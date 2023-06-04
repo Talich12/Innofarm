@@ -1,5 +1,5 @@
 <template>
-    <vue-excel-editor v-model="jsondata" filter-row>
+    <vue-excel-editor v-model="jsondata" filter-row allow-add-col>
 
     </vue-excel-editor>
 </template>
@@ -32,3 +32,10 @@ export default {
 
 }
 </script>
+
+<style scoped>
+  .vue-excel-editor {
+    color: black;
+    
+  }
+</style>
