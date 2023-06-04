@@ -3,11 +3,11 @@
         <patternbackground></patternbackground>
     <div  class="center content-inputs" style="margin-top: 12vh;">
         Логин
-        <vs-input v-model="login" placeholder="Login" style="width: 200px; display: block; margin: 1vh auto;"/>
+        <vs-input v-model="login" placeholder="Логин" style="width: 200px; display: block; margin: 1vh auto;"/>
         Пароль
-        <vs-input v-model="password" placeholder="Password" style="width: 200px; display: block; margin: 1vh auto;"/>
+        <vs-input v-model="password" placeholder="Пароль" style="width: 200px; display: block; margin: 1vh auto;"/>
         Повторите паоль
-        <vs-input v-model="repeat_password" placeholder="Repeat password" style="width: 200px; display: block; margin: 1vh auto;"/>
+        <vs-input v-model="repeat_password" placeholder="Повторите пароль" style="width: 200px; display: block; margin: 1vh auto;"/>
         Имя
         <vs-input v-model="first_name" placeholder="Имя" style="width: 200px; display: block; margin: 1vh auto;"/>
         Фамилия
@@ -72,6 +72,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+
+.vs-select {
+    color:#76816f;
+}
 
 </style>

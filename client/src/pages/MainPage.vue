@@ -44,13 +44,10 @@
 
 
         <div class="con-form">
-          <vs-input v-model="garden_name" placeholder="Введите название">
-            <template v-if="error" #message-danger >
-                        Поле пусто
+          <vs-input v-model="garden_name" placeholder="Введите название" style="width: 100%;">
+            <template v-if="error" #message-warn>
+                        <p style="color: #fff; margin-top: 0.25vh;">Поле пусто, введите данные</p>
                     </template>
-            <template #icon>
-              #
-            </template>
           </vs-input>
         </div>
 
@@ -149,5 +146,14 @@ export default {
     height: 10vh;
     display: flex;
     margin: 2vh auto;
+  }
+  .vs-input {
+    width: 100%;
+  }
+  .vs-button__content {
+    background-color:#C6D8BB;
+  }
+  .vs-dialog {
+    background-color: #B4B9B1;
   }
 </style>
