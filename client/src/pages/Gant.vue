@@ -1,5 +1,5 @@
 <template>
-  
+  <div>
     <g-gantt-chart
       :chart-start="myChartStart"
       :chart-end="myChartEnd"
@@ -15,6 +15,13 @@
         bar-end="myEnd"
       />
     </g-gantt-chart>
+    <vs-button color="#C6D8BB" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
+        Добавить запись
+    </vs-button>
+    <vs-button color="#C6D8BB" @click="Post()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
+        Сохранить
+    </vs-button>
+  </div>
   
   </template>
   
@@ -37,24 +44,33 @@
         myChartEnd: "2020-03-03 00:00",
         rows: [
           {
-            label: "My row #1",
+            label: "Обработка",
             bars: [
               {
                 myStart: "2020-03-01 12:10",
-                myEnd: "2020-03-01 16:35"
+                myEnd: "2020-03-02 16:35"
               }
             ]
           },
           {
-            label: "My row #2",
+            label: "Калибровка",
             bars: [
               {
-                myStart: "2023-02-02 01:00",
-                myEnd: "2023-03-01 12:00"
+                myStart: "2020-02-02 01:00",
+                myEnd: "20230-03-01 12:00"
               },
               {
-                myStart: "2023-03-02 13:00",
-                myEnd: "2023-03-10 22:00"
+                myStart: "2020-03-02 13:00",
+                myEnd: "2020-03-10 22:00"
+              }
+            ]
+            },
+          {
+            label: "Фиксация",
+            bars: [
+              {
+                myStart: "2020-03-01 11:00",
+                myEnd: "20230-03-01 12:00"
               }
             ]
           }
@@ -65,3 +81,9 @@
   
   }
   </script>
+
+  <style>
+  .g-gantt-row-label {
+    min-width: 100px;
+  }
+</style>
