@@ -71,4 +71,7 @@ export default {
     color: black;
     
   }
+  .vs-button {
+    background-color: #C6D8BB;
+  }
 </style>

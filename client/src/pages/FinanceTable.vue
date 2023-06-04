@@ -8,12 +8,6 @@
         <vue-excel-column field="cost" label="Стоимость" type="string"/>
         <vue-excel-column field="total" label="Итого" type="string" summary="sum"/>
     </vue-excel-editor>
-    <vs-button color="#C6D8BB" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
-        Добавить запись
-    </vs-button>
-    <vs-button color="#C6D8BB" @click="Post()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
-        Сохранить
-    </vs-button>
     </div> 
 </template>
 
@@ -83,5 +77,8 @@ export default {
   .vue-excel-editor {
     color: black;
     
+  }
+  .vs-button {
+    background-color: #C6D8BB;
   }
 </style>
