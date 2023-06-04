@@ -12,6 +12,7 @@ import LoginPage from '@/pages/LoginPage'
 import NotificationPage from '@/pages/NotificationPage'
 import SupplieTable from '@/pages/SupplieTable'
 import PlantTable from '@/pages/PlantTable'
+import Gant from '@/pages/Gant'
 
 import 'vuesax/dist/vuesax.css';
 
@@ -61,6 +62,11 @@ export default new Router({
       path: '/gardenhouse/:id/table/plant',
       name: 'PlantTable',
       component: PlantTable
+    },
+    {
+      path: '/gant',
+      name: 'Gant',
+      component: Gant
     },
   ]
 })
