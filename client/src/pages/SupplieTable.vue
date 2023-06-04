@@ -1,5 +1,6 @@
 <template>
     <div>
+        <buttonback></buttonback>
     <vue-excel-editor v-model="jsondata" height="1120" no-paging no-footer filter-row allow-add-col>
         <vue-excel-column field="date" label="Дата" type="date"  />
         <vue-excel-column field="supplie" label="Рассходник" type="string" :options="this.supplie" width="188px" />

@@ -35,7 +35,7 @@
             style="max-width: 300px; height: 25vh; margin: 5vh auto; box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.35); border-radius: 25px;"
         >
             <div class="image-container">
-              <img src="../assets/images/plus.svg"/><p>Добавить новую теплицу</p>
+              <img src="../assets/images/plus.svg" style="max-width: 50%;"/><p>Добавить новую теплицу</p>
             </div>
         </vs-button>
 

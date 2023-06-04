@@ -1,5 +1,6 @@
 <template>
     <div>
+        <buttonback></buttonback>
     <vue-excel-editor v-model="jsondata"  filter-row allow-add-col>
         <vue-excel-column field="date" label="Дата" type="date" width="100px" />
         <vue-excel-column field="henobase" label="Фенофаза" type="string"  />
