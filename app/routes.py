@@ -24,11 +24,15 @@ def post_register():
     data = request.get_json()
     login = data['login']
     password = data['password']
+    first_name = data['first_name']
+    ser_name = data['ser_name']
+    last_name = data['last_name']
+    date = data['date']
     status = data['status']
     find_user = User.query.filter_by(username=login).count()
     if find_user > 0:
         return jsonify({"status" : "Invalid username"})
-    user = User(username=login, status = status)
+    user = User(username=login, first_name = first_name, ser_name = ser_name, last_name = last_name, date = date, status = status)
     user.set_password(password)
     db.session.add(user)
     db.session.commit()
