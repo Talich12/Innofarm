@@ -5,7 +5,7 @@
         <vs-button
            color="#999483"
           :active="active == 0"
-          @click="active = 0"
+          :to="$route.path + '/table/supplie'"
         >
           Табель учета расходников
         </vs-button>

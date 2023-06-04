@@ -1,5 +1,5 @@
 <template>
-<vs-card type="4">
+<vs-card @click="onRoute()" type="4">
     <template #title>
       <h3><slot name="title"></slot></h3>
     </template>
@@ -13,6 +13,23 @@
     </template>
   </vs-card>
 </template>
+
+<script>
+export default {
+  name: "index",
+  props:['id'],
+  data() {
+      return {
+
+      };
+  },
+  methods:{
+    onRoute(){
+      this.$router.push('/gardenhouse/' + this.$props.id)
+    }
+  }
+}
+</script>
 
 <style>
   .vs-card-content.type-4 .vs-card {

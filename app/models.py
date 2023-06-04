@@ -51,9 +51,9 @@ class Garden(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    supplie_table = db.Column(db.String())
-    finance_table = db.Column(db.String())
-    plant_table = db.Column(db.String())
+    supplie_table = db.Column(db.String(), default='[]')
+    finance_table = db.Column(db.String(), default='[]')
+    plant_table = db.Column(db.String(), default='[]')
 
     author = db.relationship("User", backref="Gardens")
 

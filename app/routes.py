@@ -80,7 +80,7 @@ def get_index():
     return jsonify(output)
 
 
-@app.route('/garden/create', methods=['POST'])
+@app.route('/gardenhouse/create', methods=['POST'])
 def create_garden():
     data = request.get_json()
     garden_name = data['garden_name']
@@ -94,7 +94,7 @@ def create_garden():
 
     return jsonify({"status": "Success"})
 
-@app.route('/garden/<id>', methods=['GET'])
+@app.route('/gardenhouse/<id>', methods=['GET'])
 def get_garden(id):
     find_garden = Garden.query.filter_by(id = id).first()
 
@@ -104,7 +104,7 @@ def get_garden(id):
     return jsonify(output)
 
 
-@app.route('/garden/<id>/delete', methods=['DELETE'])
+@app.route('/gardenhouse/<id>/delete', methods=['DELETE'])
 def delete_garden(id):
     find_garden = Garden.query.filter_by(id = id).first()
 
@@ -115,7 +115,7 @@ def delete_garden(id):
 
 
 
-@app.route('/garden/<id>/add', methods=['POST'])
+@app.route('/gardenhouse/<id>/add', methods=['POST'])
 def add_worker(id):
     data = request.get_json()
     username = data['username']
@@ -130,7 +130,7 @@ def add_worker(id):
 
     return jsonify({"status": "Success"})
 
-@app.route('/garden/<id>/delete', methods=['POST'])
+@app.route('/gardenhouse/<id>/delete', methods=['POST'])
 def delete_worker(id):
     data = request.get_json()
     username = data['username']
@@ -176,7 +176,7 @@ def delete_user(id):
     return jsonify({"status": "Success"})
 
 
-@app.route('/garden/<id>/table/supplie', methods=['POST'])
+@app.route('/gardenhouse/<id>/table/supplie', methods=['POST'])
 def edit_supplie(id):
     data = request.get_json()['data']
 
@@ -187,7 +187,7 @@ def edit_supplie(id):
 
     return jsonify({"status": "Success"})
 
-@app.route('/garden/<id>/table/supplie', methods=['GET'])
+@app.route('/gardenhouse/<id>/table/supplie', methods=['GET'])
 def get_supplie(id):
 
     find_garden = Garden.query.filter_by(id = id).first()

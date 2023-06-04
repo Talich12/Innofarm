@@ -87,7 +87,7 @@ export default {
             console.log(this.jsondata)
         },
         Get(){
-            const path = "http://localhost:3000/garden/2/table/supplie";
+            const path = "http://localhost:3000" + this.$route.path;
             axios.get(path)
                 .then((response) => {
                 console.log(response.data);
@@ -104,11 +104,11 @@ export default {
             const data = {date: this.date, supplie: this.supplie, mesure: this.mesure, count: this.count}
             this.jsondata.push(data)
             console.log(this.jsondata)
-            const path = "http://localhost:3000/garden/2/table/supplie";
+            const path = "http://localhost:3000" + this.$route.path;
+
             axios.post(path, {data: this.jsondata})
                 .then((response) => {
                 console.log(response.data);
-                this.jsondata = response.data
             })
                 .catch((error) => {
             });

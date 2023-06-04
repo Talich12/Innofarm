@@ -32,7 +32,7 @@ export default new Router({
       component: ProfilePage
     },
     {
-      path: '/gardenhouse',
+      path: '/gardenhouse/:id',
       name: 'Gardenhouse',
       component: Gardenhouse
     },
@@ -52,7 +52,7 @@ export default new Router({
       component: NotificationPage
     },
     {
-      path: '/table',
+      path: '/gardenhouse/:id/table/supplie',
       name: 'SupplieTable',
       component: SupplieTable
     },

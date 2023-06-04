@@ -15,12 +15,12 @@
         </div>
         <h3 v-if="this.User.own_gardens" style="z-index: 5; font-weight: bolder;" >Теплицы в которых вы админ:</h3>
         <div v-for="garden in Data.own_gardens" class="gardenhouse">
-            <gardenhousecard>
+            <gardenhousecard :id="garden.id">
                 <template #title>
                     {{ garden.name}}
                 </template>
                 <template #text>
-                    asdfsadfsdfsa
+                    a
                 </template>
             </gardenhousecard>
         </div> 
@@ -122,7 +122,7 @@ export default {
             .catch((error) => {
                 console.log(error.response.status);
         });
-      }
+      },
   },
   created() {
     this.Get()
