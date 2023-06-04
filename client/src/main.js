@@ -37,6 +37,7 @@ axios.interceptors.response.use(
           .then((response) => {
               console.log(response.data);
               $cookies.set("access_token", response.data.access_token)
+              location.reload()
           })
           .catch((error) => {
               console.log(error);
