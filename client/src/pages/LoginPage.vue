@@ -1,6 +1,6 @@
 <template>
     <div class="dkaksd">
-    <div class="content-inputs" style="margin-top: 12vh;">
+    <div class="content-inputs" style="margin-top: 8vh;">
         <div class="image-container">
           <img src="../assets/images/logo.png">
         </div>

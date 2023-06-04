@@ -1,24 +1,29 @@
 <template>
     <div class="greenhousepage">
+      <buttonback></buttonback>
       <headermain></headermain>
       <div class="button-row">
-        <vs-button class="gdbtn"
+        <vs-button class="btnsquare"
            color="#999483"
           :active="active == 0"
           :to="$route.path + '/table/supplie'"
         >
-          Табель учета расходников
+        <div class="image-container">
+          <img src="../assets/images/table.svg"/><p>Табель учета расходников</p>
+        </div>
         </vs-button>
-        <vs-button class="gdbtn"
+        <vs-button class="btnsquare"
            color="#999483"
           :active="active == 0"
           @click="active = 0"
         >
-          Календарь культивации
+        <div class="image-container">
+          <img src="../assets/images/calendar.svg"/><p>Календарь культивации</p>
+        </div>
         </vs-button>
       </div>
       <div class="button-row">
-        <vs-button class="gdbtn"
+        <vs-button class="btnsquare"
            color="#999483"
           :active="active == 0"
           @click="active = 0"
@@ -27,28 +32,25 @@
           <img src="../assets/images/table.svg"/><p>План-график обслуживания теплицы</p>
         </div>
         </vs-button>
-        <vs-button class="gdbtn"
+        <vs-button class="btnsquare"
            color="#999483"
           :active="active == 0"
           :to="$route.path + '/table/plant'"
         >
-          Таблица для отслеживания параметров растений
+        <div class="image-container">
+          <img src="../assets/images/flower.svg"/><p style="font-size: smaller;">Таблица для отслеживания параметров растений</p>
+        </div>
         </vs-button>
       </div>
       <div class="button-row">
-        <vs-button class="gdbtn"
+        <vs-button class="btnsquare"
            color="#999483"
           :active="active == 0"
           :to="$route.path + '/table/finance'"
         >
-          Система финансового учета для отслеживания затрат 
-        </vs-button>
-        <vs-button class="gdbtn"
-           color="#999483"
-          :active="active == 0"
-          @click="active = 0"
-        >
-          Система оповещения
+        <div class="image-container">
+          <img src="../assets/images/cash.svg"/><p style="font-size:smaller;">Система финансового учета для отслеживания затрат </p>
+        </div>
         </vs-button>
       </div>
       <myfooter></myfooter>
@@ -66,7 +68,7 @@
   <style>
   .image-container img {
     max-width: 50%;
-    margin: auto;
+    margin: 0 auto;
   }
 
   .greenhousepage {
@@ -83,6 +85,7 @@
 
   .gdbtn {
     width: 15vh;
+
   }
   </style>
   

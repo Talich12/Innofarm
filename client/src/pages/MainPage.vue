@@ -143,9 +143,8 @@ export default {
     width: auto;
    }
   .image-container img {
-    height: 10vh;
     display: flex;
-    margin: 2vh auto;
+    margin: 0vh auto;
   }
   .vs-input {
     width: 100%;

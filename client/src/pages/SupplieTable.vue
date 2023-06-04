@@ -7,10 +7,10 @@
     </vue-excel-editor>
     <div style="display: flex;">
         <vs-button 
-            color="#C6D8BB" @click="onClick()" style="width: 180px; height: 8vh; display: flex; margin: 2vh auto; ">
+            color="#C6D8BB" @click="onClick()" style="width: 46%; height: 8vh; display: flex; margin: 2vh auto; ">
             Добавить запись
         </vs-button>
-        <vs-button color="#C6D8BB" @click="Post()" style="width: 180px; height: 8vh; display: flex; margin: 2   vh auto; ">
+        <vs-button color="#C6D8BB" @click="Post()" style="width: 46%; height: 8vh; display: flex; margin: 2vh auto; ">
             Сохранить
         </vs-button>
     </div>

@@ -1,7 +1,10 @@
 <template>
     <div>
         <patternbackground></patternbackground>
-    <div  class="center content-inputs" style="margin-top: 12vh;">
+    <div  class="center content-inputs" style="margin-top: 8vh;">
+        <div class="image-container">
+          <img src="../assets/images/logo.png">
+        </div>
         Логин
         <vs-input v-model="login" placeholder="Логин" style="width: 200px; display: block; margin: 1vh auto;"/>
         Пароль
@@ -77,5 +80,10 @@ export default {
 .vs-select {
     color:#76816f;
 }
+.image-container img {
+    max-width: 100%;
+    height: 6vh;
+    margin: 0 auto;
+  }
 
 </style>

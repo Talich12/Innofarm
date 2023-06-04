@@ -20,6 +20,9 @@ Vue.component('patternbackground', PatternBackground)
 import Footer from './components/Footer'
 Vue.component('myfooter', Footer)
 
+import ButtonBack from './components/ButtonBack'
+Vue.component('buttonback', ButtonBack)
+
 Vue.config.productionTip = false
 
 axios.interceptors.response.use(

@@ -49,9 +49,10 @@ body {
   width: 100%;
 }
 
-.vs-button__content {
-        height: 15vh;
-        width: 15vh;
+.btnsquare {
+  height: 15vh;
+  width: 15vh;
+  background-color: #C6D8BB;
 }
 .vs-card-content.type-4 .vs-card__text {
   background-color: #C6D8BB;
