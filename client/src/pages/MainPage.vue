@@ -25,7 +25,7 @@
             </gardenhousecard>
         </div> 
         <vs-button
-            v-if="this.User.status === 'admin'"
+            v-if="this.User.status === 'Admin'"
             @click="active = !active"
             block
             color="#C6D8BB"

@@ -11,6 +11,7 @@
 
 <script>
 import axios from 'axios';
+import router from '../router';
 
 export default {
     data:() => ({
@@ -27,6 +28,7 @@ export default {
                 this.$cookies.set("access_token", response.data.access_token)
                 this.$cookies.set("refresh_token", response.data.refresh_token)
                 console.log($cookies.get("access_token"))
+                router.push('/')
             })
             .catch((error) => {
                 console.log(error);
