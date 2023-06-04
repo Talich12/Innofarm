@@ -175,6 +175,20 @@ def delete_user(id):
     return jsonify({"status": "Success"})
 
 
+@app.route('/garden/<id>/table/supplie', methods=['POST'])
+def edit_supplie(id):
+    data = request.get_json()['data']
+
+    find_garden = Garden.query.filter_by(id = id).first()
+
+    find_garden.supplie_table = data
+    db.session.commit()
+    
+
+    return jsonify({"status": "Success"})
+
+
+
 @app.route('/TokenRefresh', methods=['GET'])
 @jwt_required(refresh=True)
 def refresh_token():
