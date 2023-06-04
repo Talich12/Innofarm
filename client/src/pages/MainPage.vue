@@ -31,7 +31,9 @@
             color="#C6D8BB"
             style="max-width: 300px; height: 25vh; margin: 5vh auto; box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.35); border-radius: 25px;"
         >
-            <i class='bx bxs-paint-roll' ></i> Добавить новую теплицу
+            <div class="image-container">
+              <img src="../assets/images/plus.svg"/><p>Добавить новую теплицу</p>
+            </div>
         </vs-button>
         <vs-dialog v-model="active">
         <template #header>
@@ -140,3 +142,14 @@ export default {
   }
 };
 </script>
+
+<style>
+   .vs-button__content {
+    width: auto;
+   }
+  .image-container img {
+    height: 10vh;
+    display: flex;
+    margin: 2vh auto;
+  }
+</style>
