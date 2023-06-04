@@ -6,6 +6,7 @@ from app.models import User, Garden, Workers, RevokedTokenModel, UserSchema, Gar
 from flask_cors import cross_origin
 from werkzeug.utils import secure_filename
 import os
+import json
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
@@ -180,12 +181,23 @@ def edit_supplie(id):
     data = request.get_json()['data']
 
     find_garden = Garden.query.filter_by(id = id).first()
+    find_garden.supplie_table = str(data)
 
-    find_garden.supplie_table = data
     db.session.commit()
-    
 
     return jsonify({"status": "Success"})
+
+@app.route('/garden/<id>/table/supplie', methods=['GET'])
+def get_supplie(id):
+
+    find_garden = Garden.query.filter_by(id = id).first()
+    string = find_garden.supplie_table
+    string = string.replace("'", "\"")
+    json_data = json.loads(string)
+
+    return jsonify(json_data)
+
+
 
 
 

@@ -10,7 +10,7 @@ import Gardenhouse from '@/pages/GardenhousePage'
 import RegistrationPage from '@/pages/RegistrationPage'
 import LoginPage from '@/pages/LoginPage'
 import NotificationPage from '@/pages/NotificationPage'
-import Table from '@/pages/Tables'
+import SupplieTable from '@/pages/SupplieTable'
 
 import 'vuesax/dist/vuesax.css';
 
@@ -53,8 +53,8 @@ export default new Router({
     },
     {
       path: '/table',
-      name: 'NotificTabletion',
-      component: Table
+      name: 'SupplieTable',
+      component: SupplieTable
     },
   ]
 })
