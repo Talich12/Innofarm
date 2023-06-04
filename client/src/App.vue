@@ -77,4 +77,10 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.systable th[data-v-cf2e49d2]:not() {
+    background: #DFE9D9;
+  }
+.systable tbody tr td[data-v-cf2e49d2]{
+  background: #B4B9B1;
+  }
 </style>
