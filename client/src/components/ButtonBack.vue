@@ -6,6 +6,7 @@
         circle
         icon
         floating
+        @click="goBack()"
       >
         <img src="../assets/images/left.svg" style="height: 3vh; width: 3vh;">
       </vs-button>
@@ -13,7 +14,13 @@
 </template>
 
 <script>
-
+export default {
+  methods:{
+    goBack(){
+      this.$router.go(-1)
+    }
+  }
+}
 </script>
 
 <style>

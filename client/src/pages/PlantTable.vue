@@ -51,8 +51,6 @@ export default {
                 .catch((error) => {
             });
 
-            const path2 = "http://localhost:3000/gardenhouse/" + this.$route.params.id + "/table/finance";
-            console.log(path2)
         },
         onClick(){
             const data = {}

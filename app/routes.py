@@ -8,16 +8,11 @@ from werkzeug.utils import secure_filename
 import os
 import json
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-
 @jwt.token_in_blocklist_loader
 def check_if_token_in_blacklist(jwt_header, decrypted_token):
     jti = decrypted_token['jti']
     return RevokedTokenModel.is_jti_blacklisted(jti)
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route('/registration', methods=['POST'])
@@ -82,12 +77,16 @@ def get_index():
 
 @app.route('/gardenhouse/create', methods=['POST'])
 def create_garden():
-    data = request.get_json()
+    data = request.form
+    file = request.files['file']
     garden_name = data['garden_name']
     author_username = data['author']
 
+    filename = secure_filename(file.filename)
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
     find_user = User.query.filter_by(username = author_username).first()
-    garden = Garden(name = garden_name, author_id = find_user.id, author = find_user)
+    garden = Garden(name = garden_name, author_id = find_user.id, author = find_user, image = filename)
 
     db.session.add(garden)
     db.session.commit()

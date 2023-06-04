@@ -51,6 +51,8 @@ class Garden(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    adress = db.Column(db.String())
+    image = db.Column(db.String(), default='sample2.png')
     supplie_table = db.Column(db.String(), default='[]')
     finance_table = db.Column(db.String(), default='[]')
     plant_table = db.Column(db.String(), default='[]')
@@ -111,5 +113,6 @@ class GardenSchema(ma.SQLAlchemySchema):
 
     id = ma.auto_field()
     name = ma.auto_field()
+    image = ma.auto_field()
 
     author = fields.Nested(UserSchema)

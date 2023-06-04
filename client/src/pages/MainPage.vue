@@ -19,6 +19,9 @@
                 <template #title>
                     {{ garden.name}}
                 </template>
+                <template #img>
+                  <img :src="require(`@/assets/images/load/${garden.image}`)" alt="">
+                </template>
                 <template #text>
                     a
                 </template>
@@ -35,6 +38,7 @@
               <img src="../assets/images/plus.svg"/><p>Добавить новую теплицу</p>
             </div>
         </vs-button>
+
         <vs-dialog v-model="active">
         <template #header>
           <h4 class="not-margin">
@@ -49,6 +53,7 @@
                         <p style="color: #fff; margin-top: 0.25vh;">Поле пусто, введите данные</p>
                     </template>
           </vs-input>
+          <vs-input type="file" @change="OnFileSelected" />
         </div>
 
         <template #footer>
@@ -70,6 +75,7 @@ export default {
   name: "index",
   data() {
       return {
+        file: null,
         error: true,
         garden_name: '',
         active: false,
@@ -109,8 +115,13 @@ export default {
         if (this.error){
             return
         }
+        const fd = new FormData();
+        fd.append('garden_name', this.garden_name)
+        fd.append('file', this.file)
+        fd.append('author', this.User.username)
+        console.log(fd)
         const path = "http://localhost:3000/gardenhouse/create"
-        axios.post(path, {garden_name: this.garden_name, author: this.User.username})
+        axios.post(path, fd)
             .then((response) => {
             console.log(response.data);
             this.Get()
@@ -119,6 +130,10 @@ export default {
             .catch((error) => {
                 console.log(error.response.status);
         });
+      },
+      OnFileSelected(event) {
+        this.file = event.target.files[0]
+        console.log(event)
       },
   },
   created() {

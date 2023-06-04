@@ -12,6 +12,7 @@
           <img src="../assets/images/table.svg"/><p>Табель учета расходников</p>
         </div>
         </vs-button>
+
         <vs-button class="btnsquare"
            color="#999483"
           :active="active == 0"
@@ -21,6 +22,7 @@
           <img src="../assets/images/calendar.svg"/><p>Календарь культивации</p>
         </div>
         </vs-button>
+
       </div>
       <div class="button-row">
         <vs-button class="btnsquare"
