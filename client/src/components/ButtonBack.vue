@@ -26,7 +26,7 @@ export default {
 <style>
     .bckbtn {
         position: absolute;
-        top: 10vh;
+        bottom: 11vh;
         right: 3vw;
         z-index: 100;
     }
