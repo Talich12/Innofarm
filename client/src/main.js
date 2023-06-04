@@ -4,6 +4,7 @@ import router from './router'
 import axios from 'axios'
 import VueCookies from 'vue-cookies'
 
+
 import HeaderProfile from './components/HeaderProfile'
 Vue.component('headerprofile', HeaderProfile)
 

@@ -39,7 +39,7 @@
         <vs-button
            color="#999483"
           :active="active == 0"
-          @click="active = 0"
+          :to="$route.path + '/table/finance'"
         >
           Система финансового учета для отслеживания затрат 
         </vs-button>

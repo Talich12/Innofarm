@@ -110,10 +110,8 @@ export default {
         if (this.error){
             return
         }
-        const path = "http://localhost:3000/garden/create"
-        axios.post(path, {garden_name: this.garden_name, author: this.User.username}, {headers: {
-                'Authorization': 'Bearer ' + this.$cookies.get("access_token"),
-            }})
+        const path = "http://localhost:3000/gardenhouse/create"
+        axios.post(path, {garden_name: this.garden_name, author: this.User.username})
             .then((response) => {
             console.log(response.data);
             this.Get()
