@@ -3,8 +3,8 @@
     <vs-avatar size="60" class="avatar">
       <img src="../assets/images/sample1.png" alt="">
     </vs-avatar>
-    <div class="content" >
-      <h1 style="margin-left: 10vw; font-weight: 900;">{{ $props.name }}</h1>
+    <div class="content" style="width: 25vw;">
+      <h1 class="break-word" style="font-weight: 900;">{{ $props.name }}</h1>
     </div>
   </div>
 </template>
@@ -24,12 +24,16 @@ export default {
 </script>
 
 <style scoped>
+.break-word {
+  font-weight: 900;
+  word-break:keep-all;
+}
 .container {
   position: sticky;
   z-index: 10;
   top: 0;
   height: 14vh;
-  background-color: #233325;
+  background-color: #3b513e;
   opacity: 80%;
   color: white;
   display: flex;

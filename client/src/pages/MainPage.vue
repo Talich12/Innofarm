@@ -2,7 +2,7 @@
     <div class="main-container">
         <headerprofile :name="this.User.username"/>
         <patternbackground></patternbackground>
-        <h3 style="margin-top: 3vh; z-index: 5; font-weight: bolder;">Теплицы в которых вы работаете:</h3>
+        <h3 style="z-index: 5; font-weight: bolder; position: relative; margin: 3vh auto;">Теплицы в которых вы работаете:</h3>
         <div v-for="garden in Data.gardens" class="gardenhouse">
             <gardenhousecard>
                 <template #title>
@@ -13,7 +13,7 @@
                 </template>
             </gardenhousecard>
         </div>
-        <h3 style="z-index: 5; font-weight: bolder;" >Теплицы в которых вы админ:</h3>
+        
         <div v-for="garden in Data.own_gardens" class="gardenhouse">
             <gardenhousecard>
                 <template #title>
@@ -24,6 +24,13 @@
                 </template>
             </gardenhousecard>
         </div> 
+        <vs-button
+            block
+            color="#B7C6AE"
+            style="max-width: 300px; height: 25vh; margin: 5vh auto; box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.35); border-radius: 25px;"
+        >
+            <i class='bx bxs-paint-roll' ></i> Добавить новую теплицу
+        </vs-button>
         <myfooter></myfooter>
     </div>
 </template>

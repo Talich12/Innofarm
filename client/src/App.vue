@@ -53,4 +53,7 @@ body {
         height: 15vh;
         width: 15vh;
 }
+.vs-card-content.type-4 .vs-card__text {
+  background-color: #B7C6AE;
+}
 </style>

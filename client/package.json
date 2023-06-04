@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@jamescoyle/vue-icon": "^0.1.2",
     "axios": "^1.4.0",
     "vue": "^2.5.2",
     "vue-cookies": "^1.8.3",
