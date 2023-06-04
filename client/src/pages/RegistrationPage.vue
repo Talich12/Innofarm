@@ -1,21 +1,23 @@
 <template>
-    <div  class="center content-inputs">
+    <div>
+        <patternbackground></patternbackground>
+    <div  class="center content-inputs" style="margin-top: 12vh;">
         Логин
-        <vs-input v-model="login" placeholder="Login" />
+        <vs-input v-model="login" placeholder="Login" style="width: 200px; display: block; margin: 1vh auto;"/>
         Пароль
-        <vs-input v-model="password" placeholder="Password" />
+        <vs-input v-model="password" placeholder="Password" style="width: 200px; display: block; margin: 1vh auto;"/>
         Повторите паоль
-        <vs-input v-model="repeat_password" placeholder="Repeat password" />
+        <vs-input v-model="repeat_password" placeholder="Repeat password" style="width: 200px; display: block; margin: 1vh auto;"/>
         Имя
-        <vs-input v-model="first_name" placeholder="Имя" />
+        <vs-input v-model="first_name" placeholder="Имя" style="width: 200px; display: block; margin: 1vh auto;"/>
         Фамилия
-        <vs-input v-model="ser_name" placeholder="Фамилия" />
+        <vs-input v-model="ser_name" placeholder="Фамилия" style="width: 200px; display: block; margin: 1vh auto;"/>
         Отчество
-        <vs-input v-model="last_name" placeholder="Отчество" />
+        <vs-input v-model="last_name" placeholder="Отчество" style="width: 200px; display: block; margin: 1vh auto;"/>
         Дата рождения
-        <vs-input type="date" v-model="date" label="Date"/>
+        <vs-input type="date" v-model="date" style="width: 200px; display: block; margin: 1vh auto;"/>
 
-        <vs-select placeholder="Select" v-model="status">
+        <vs-select placeholder="Select" v-model="status" style="width: 200px; display: block; margin: 3vh auto;">
             <vs-option label="Admin" value="Admin">
             Admin
             </vs-option>
@@ -24,9 +26,10 @@
             </vs-option>
         </vs-select>
 
-        <vs-button :active="active == 1" @click="onClick()">
-            Commit
+        <vs-button :active="active == 1" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
+            <p>Commit</p>
         </vs-button>
+    </div>
     </div>
 </template>
 
@@ -68,4 +71,6 @@ export default {
 }
 </script>
 
-        
+<style scoped>
+
+</style>

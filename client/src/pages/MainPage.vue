@@ -28,7 +28,7 @@
             v-if="this.User.status === 'admin'"
             @click="active = !active"
             block
-            color="#B7C6AE"
+            color="#C6D8BB"
             style="max-width: 300px; height: 25vh; margin: 5vh auto; box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.35); border-radius: 25px;"
         >
             <i class='bx bxs-paint-roll' ></i> Добавить новую теплицу
