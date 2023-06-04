@@ -65,7 +65,7 @@
   
   <style>
   .image-container img {
-    max-width: 60%;
+    max-width: 50%;
     margin: auto;
   }
 

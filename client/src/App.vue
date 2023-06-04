@@ -72,4 +72,9 @@ body {
 .vs-button {
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.35); 
 }
+p {
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 </style>

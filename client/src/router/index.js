@@ -8,6 +8,7 @@ import ProfilePage from '@/pages/ProfilePage'
 import Gardenhouse from '@/pages/GardenhousePage'
 import RegistrationPage from '@/pages/RegistrationPage'
 import LoginPage from '@/pages/LoginPage'
+import NotificationPage from '@/pages/NotificationPage'
 
 import 'vuesax/dist/vuesax.css';
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/login',
       name: 'LoginPage',
       component: LoginPage
+    },
+    {
+      path: '/notification',
+      name: 'Notification',
+      component: NotificationPage
     },
   ]
 })
