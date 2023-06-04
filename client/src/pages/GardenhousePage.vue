@@ -1,54 +1,57 @@
 <template>
     <div class="greenhousepage">
-    <patternbackground></patternbackground>
+      <headermain></headermain>
       <div class="button-row">
         <vs-button
-           color="#776F66"
+           color="#999483"
           :active="active == 0"
           @click="active = 0"
         >
-          Active
+          Табель учета расходников
         </vs-button>
         <vs-button
-           color="#776F66"
+           color="#999483"
           :active="active == 0"
           @click="active = 0"
         >
-          Active
+          Календарь культивации
         </vs-button>
       </div>
       <div class="button-row">
         <vs-button
-           color="#776F66"
+           color="#999483"
           :active="active == 0"
           @click="active = 0"
         >
-          Active
+        <div class="image-container">
+          <img src="../assets/images/table2.svg"/><p>План-график обслуживания теплицы</p>
+        </div>
         </vs-button>
         <vs-button
-           color="#776F66"
+           color="#999483"
           :active="active == 0"
           @click="active = 0"
         >
-          Active
+          Таблица для отслеживания параметров растений
         </vs-button>
       </div>
       <div class="button-row">
         <vs-button
-           color="#776F66"
+           color="#999483"
           :active="active == 0"
           @click="active = 0"
         >
-          Active
+          Система финансового учета для отслеживания затрат 
         </vs-button>
         <vs-button
-           color="#776F66"
+           color="#999483"
           :active="active == 0"
           @click="active = 0"
         >
-          Active
+          Система оповещения
         </vs-button>
       </div>
+      <myfooter></myfooter>
     </div>
   </template>
   
@@ -61,6 +64,11 @@
   </script>
   
   <style>
+  .image-container img {
+    max-width: 60%;
+    margin: auto;
+  }
+
   .greenhousepage {
     height: 100%;
     display: flex;

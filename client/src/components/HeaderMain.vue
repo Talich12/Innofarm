@@ -4,12 +4,19 @@
         <img src="../assets/images/sample1.png" alt="">
       </vs-avatar>
       <div class="content">
-        <img src="../assets/images/logo.png">
+        <div class="image-container">
+          <img src="../assets/images/logo.png">
+        </div>
       </div>
     </div>
   </template>
   
   <style scoped>
+  .image-container img {
+    max-width: 100%;
+    height: 6vh;
+    margin: 0 auto;
+  }
   .container {
     position: sticky;
     top: 0;

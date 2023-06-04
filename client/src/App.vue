@@ -62,5 +62,14 @@ body {
 }
 .vs-input-content {
   color: black;
+  opacity: 1;
+}
+.vs-select__input.simple {
+  background: #C6D8BB;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.35);
+  color: black;
+}
+.vs-button {
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.35); 
 }
 </style>
