@@ -29,11 +29,13 @@
            color="#999483"
           :active="active == 0"
           @click="active = 0"
+          to="/gant"
         >
         <div class="image-container">
           <img src="../assets/images/table.svg"/><p>План-график обслуживания теплицы</p>
         </div>
         </vs-button>
+
         <vs-button class="btnsquare"
            color="#999483"
           :active="active == 0"

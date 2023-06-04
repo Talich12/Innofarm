@@ -4,9 +4,9 @@
         <patternbackground></patternbackground>
         <headerprofile :name="this.name"/>
         <p style="background-color: aliceblue; width: 50vw; height: 2.5vh; color: #76816f; border-radius: 15px; display: flex; margin: 2vh auto; justify-content: center;">Должность</p>
-        <p>djdjjdj</p>
+        <p>{{User.status}}</p>
         <p style="background-color: aliceblue; width: 80vw; height: 2.5vh; color: #76816f; border-radius: 15px; display: flex; margin: 2vh auto; justify-content: center;">Персональная информация</p>
-        <p>ddd</p>
+        <p>{{User.date}}</p>
         <p style="background-color: aliceblue; width: 50vw; height: 2.5vh; color: #76816f; border-radius: 15px; display: flex; margin: 2vh auto; justify-content: center;">Пропуск</p>
         <div class="qr-container">
           <img src="../assets/images/qr.png" style="height: 300px;">

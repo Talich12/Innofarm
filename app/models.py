@@ -105,6 +105,7 @@ class UserSchema(ma.SQLAlchemySchema):
     first_name = ma.auto_field()
     ser_name = ma.auto_field()
     last_name = ma.auto_field()
+    date = ma.auto_field()
 
 class GardenSchema(ma.SQLAlchemySchema):
     class Meta:

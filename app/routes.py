@@ -262,6 +262,21 @@ def get_supplie():
     return jsonify(output)
 
 
+@app.route('/supplie', methods=['POST'])
+def add_supplie():
+    data = request.get_json()
+
+    name = data['supplie_name']
+    cost = data['cost']
+
+    supplie = Supplie(name = name, cost = cost)
+    
+    db.session.add(supplie)
+    db.session.commit()
+
+    return jsonify({'status': 'Success'})
+
+
 @app.route('/TokenRefresh', methods=['GET'])
 @jwt_required(refresh=True)
 def refresh_token():
