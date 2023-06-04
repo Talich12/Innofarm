@@ -11,6 +11,7 @@ import RegistrationPage from '@/pages/RegistrationPage'
 import LoginPage from '@/pages/LoginPage'
 import NotificationPage from '@/pages/NotificationPage'
 import SupplieTable from '@/pages/SupplieTable'
+import PlantTable from '@/pages/PlantTable'
 
 import 'vuesax/dist/vuesax.css';
 
@@ -55,6 +56,11 @@ export default new Router({
       path: '/gardenhouse/:id/table/supplie',
       name: 'SupplieTable',
       component: SupplieTable
+    },
+    {
+      path: '/gardenhouse/:id/table/plant',
+      name: 'PlantTable',
+      component: PlantTable
     },
   ]
 })

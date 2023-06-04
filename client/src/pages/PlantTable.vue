@@ -1,10 +1,15 @@
 <template>
     <div>
-    <vue-excel-editor v-model="jsondata" height="1120" no-paging no-footer filter-row allow-add-col>
-        <vue-excel-column field="date" label="Дата" type="date"  />
-        <vue-excel-column field="supplie" label="Рассходник" type="string"  />
-        <vue-excel-column field="mesure" label="Ед. изм." type="string"  />
-        <vue-excel-column field="count" label="Кол-во" type="number" />
+    <vue-excel-editor v-model="jsondata" filter-row allow-add-col>
+        <vue-excel-column field="date" label="Дата" type="date" width="100px" />
+        <vue-excel-column field="henobase" label="Фенофаза" type="string"  />
+        <vue-excel-column field="height" label="Средняя высота растений, см" type="string"  />
+        <vue-excel-column field="leaves" label="Среднее кол-во листьев, шт" type="number"  />
+        <vue-excel-column field="height2" label="Средняя высота, см" type="number"  />
+        <vue-excel-column field="leaves2" label="Среднее количество междоузлий, см" type="number" />
+        <vue-excel-column field="weight" label="Средняя масса после снятия, г" type="number"  />
+        <vue-excel-column field="square" label="Средняя площадь поверхности листьев" type="number"  />
+        <vue-excel-column field="notes" label="Примечания" type="string"  />
     </vue-excel-editor>
     <vs-button color="#C6D8BB" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
         Добавить запись
@@ -26,9 +31,6 @@ export default {
       };
     },
     methods: {
-        onClick(){
-            console.log(this.jsondata)
-        },
         Get(){
             const path = "http://localhost:3000" + this.$route.path;
             axios.get(path)

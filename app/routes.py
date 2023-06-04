@@ -197,6 +197,26 @@ def get_supplie(id):
 
     return jsonify(json_data)
 
+@app.route('/gardenhouse/<id>/table/plant', methods=['POST'])
+def edit_plant(id):
+    data = request.get_json()['data']
+
+    find_garden = Garden.query.filter_by(id = id).first()
+    find_garden.plant_table = str(data)
+
+    db.session.commit()
+
+    return jsonify({"status": "Success"})
+
+@app.route('/gardenhouse/<id>/table/plant', methods=['GET'])
+def get_plant(id):
+
+    find_garden = Garden.query.filter_by(id = id).first()
+    string = find_garden.plant_table
+    string = string.replace("'", "\"")
+    json_data = json.loads(string)
+
+    return jsonify(json_data)
 
 
 

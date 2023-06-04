@@ -30,7 +30,7 @@
         <vs-button
            color="#999483"
           :active="active == 0"
-          @click="active = 0"
+          :to="$route.path + '/table/plant'"
         >
           Таблица для отслеживания параметров растений
         </vs-button>
