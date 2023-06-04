@@ -1,11 +1,16 @@
 <template>
-    <div class="center content-inputs" style="margin-top: 12vh;">
-        <vs-input v-model="login" placeholder="Login" style="width: 200px; display: block; margin: 1vh auto;"/>
-        <vs-input v-model="password" placeholder="Password" style="width: 200px; display: block; margin: 1vh auto;"/>
+    <div class="dkaksd">
+    <div class="content-inputs" style="margin-top: 12vh;">
+        <div class="image-container">
+          <img src="../assets/images/logo.png">
+        </div>
+        <vs-input v-model="login" placeholder="Логин" style="width: 200px; display: block; margin: 2vh auto;"/>
+        <vs-input v-model="password" placeholder="Пароль" style="width: 200px; display: block; margin: 2vh auto;"/>
 
-        <vs-button color="#C6D8BB" :active="active == 1" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
+        <vs-button color="#C6D8BB" :active="active == 1" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 2vh auto; ">
             Продолжить
         </vs-button>
+    </div>
     </div>
 </template>
 
@@ -39,4 +44,13 @@ export default {
 }
 </script>
 
-        
+<style>
+.content-inputs {
+    z-index: 10;
+}
+.image-container img {
+    max-width: 100%;
+    height: 6vh;
+    margin: 0 auto;
+  }
+</style>

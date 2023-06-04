@@ -55,7 +55,7 @@
         <template #footer>
           <div class="footer-dialog">
             <vs-button @click="onClick()" block>
-              Добавить теплицу
+              <p>Добавить теплицу</p>
             </vs-button>
           </div>
         </template>
