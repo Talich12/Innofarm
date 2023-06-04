@@ -222,10 +222,22 @@ def get_plant(id):
 def edit_finance(id):
     data = request.get_json()['data']
 
-    find_garden = Garden.query.filter_by(id = id).first()
-    find_garden.finance_table = str(data)
+    supplie = Supplie.query.all()
+    supplie_schema = SupplieSchema(many=True)
+    supplie_json = supplie_schema.dump(supplie)
 
+    find_garden = Garden.query.filter_by(id = id).first()
+
+    for sup in supplie_json:
+        for raw in data:
+            if raw['supplie'] == sup['name']:
+                raw['cost'] = sup['cost']
+                raw['total'] = int(raw['count']) * int(raw['cost'])
+
+    find_garden.finance_table = str(data)
     db.session.commit()
+
+    
 
     return jsonify({"status": "Success"})
 
@@ -234,6 +246,8 @@ def get_finance(id):
 
     find_garden = Garden.query.filter_by(id = id).first()
     string = find_garden.finance_table
+
+    
     string = string.replace("'", "\"")
     json_data = json.loads(string)
 

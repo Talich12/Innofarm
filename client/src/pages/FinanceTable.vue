@@ -4,6 +4,7 @@
         <vue-excel-column field="date" label="Дата" type="date"  />
         <vue-excel-column field="supplie" label="Рассходник" type="string" :options="this.supplie"  />
         <vue-excel-column field="count" label="Кол-во" type="number" />
+        <vue-excel-column field="cost" label="Стоимость" type="string"/>
         <vue-excel-column field="total" label="Итого" type="string" summary="sum"/>
     </vue-excel-editor>
     <vs-button color="#C6D8BB" @click="onClick()" style="width: 200px; height: 8vh; display: flex; margin: 1vh auto; ">
