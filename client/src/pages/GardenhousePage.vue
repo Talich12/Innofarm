@@ -17,6 +17,7 @@
            color="#999483"
           :active="active == 0"
           @click="active = 0"
+          to="/gant/2"
         >
         <div class="image-container">
           <img src="../assets/images/calendar.svg"/><p>Календарь культивации</p>
@@ -29,7 +30,7 @@
            color="#999483"
           :active="active == 0"
           @click="active = 0"
-          to="/gant"
+          to="/gant/1"
         >
         <div class="image-container">
           <img src="../assets/images/table.svg"/><p>План-график обслуживания теплицы</p>
