@@ -2,7 +2,7 @@
 Перед нашей командой стояла задача в сжатые сроки создать веб-приложение в виде личного кабинета для систематизации всех процессов связанных с работой биолога вертикальных теплиц. Кейс компании "Иннофарм".
 # Приложения к репозиторию
 *Рекомендуемый порядок просмотра материалов указан ниже:*
-1. Презентация
+1. [Презентация](https://github.com/Talich12/Innofarm/blob/main/%D0%9A%D0%B5%D0%B9%D1%81%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%98%D0%BD%D0%BD%D0%BE%D1%84%D0%B0%D1%80%D0%BC.pdf)
 2. [Скринкаст (демо)](https://www.youtube.com/watch?v=SFrGbKufdbU)
 3. [Figma](https://www.figma.com/file/B2w4PJ2iFjb5Xh1tZbbxxs/Untitled?type=design&node-id=0-1&t=2uNXsCrw0Qzxcprm-0)
 4. [Экономический калькулятор](https://github.com/Talich12/Innofarm/blob/main/%D0%AD%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80.xlsx)
