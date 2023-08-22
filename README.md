@@ -34,7 +34,8 @@
     flask db upgrade
     ```
 
-## Запуск backend-а
+## Запуск backend
+
     ```bash
     python3 run.py
     ```
