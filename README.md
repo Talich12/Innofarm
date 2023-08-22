@@ -36,7 +36,5 @@
 
 ## Запуск backend
 
-    ```bash
     python3 run.py
-    ```
 
